@@ -5,11 +5,13 @@
   <thead>
     <tr>
       <th>Id</th>
-      <th>Marka Adı</th>
+      <th>Kullanıcı Adı</th>
+      <th>Şirket Adı</th>
     </tr>
   </thead>
-  <tr *ngFor="let brand of brands">
-    <td>{{ brand.id }}</td>
-    <td>{{ brand.name }}</td>
+  <tr *ngFor="let customer of customers">
+    <td>{{ customer.id }}</td>
+    <td>{{ customer.userId }}</td>
+    <td>{{ customer.companyName }}</td>
   </tr>
 </table>
