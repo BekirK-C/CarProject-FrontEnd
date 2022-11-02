@@ -1,15 +1,8 @@
 <div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<table *ngIf="dataLoaded == true" class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Marka Adı</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let brand of brands">
-    <td>{{ brand.id }}</td>
-    <td>{{ brand.name }}</td>
-  </tr>
-</table>
+<ul class="list-group">
+  <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" class="list-group-item">{{brand.name}}</li>
+</ul>
+
+
