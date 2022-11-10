@@ -2,6 +2,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 <ul class="list-group">
+  <li routerLink="/cars" [class]="getAllColorClass()" >All Colors</li>
   <li (click)="setCurrentColor(color)" routerLink="/cars/color/{{ color.id }}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">{{ color.name }}</li>
 </ul>
 <h5 *ngIf="currentColor">{{ currentColor.name }} seçtiniz</h5>

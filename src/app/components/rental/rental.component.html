@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Kiralama No</th>
+        <th>Model</th>
         <th>Marka</th>
         <th>Müşteri</th>
         <th>Alış Tarihi</th>
@@ -13,6 +14,7 @@
     </thead>
     <tr *ngFor="let rental of rentals">
       <td>{{ rental.rentalId }}</td>
+      <td>{{ rental.carName }}</td>
       <td>{{ rental.brandName }}</td>
       <td>{{ rental.customerFullName }}</td>
       <td>{{ rental.rentDate }}</td>
