@@ -29,7 +29,6 @@ export class CarImageComponent implements OnInit {
   getImagePath(image:string)
   {
     let newPath = this.path + image;
-    //console.log(newPath)
     return newPath; 
   }
 

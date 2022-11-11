@@ -18,7 +18,8 @@ import { FilterCarPipe } from './pipes/filter-car.pipe';
 import { FilterBrandPipe } from './pipes/filter-brand.pipe';
 import { GarageComponent } from './components/garage/garage.component';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CarFilterComponent } from './components/car-filter/car-filter.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
     FilterCarPipe,
     FilterBrandPipe,
     GarageComponent,
+    CarFilterComponent,
   ],
   imports: [
     BrowserModule,
