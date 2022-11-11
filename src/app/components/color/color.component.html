@@ -1,8 +1,17 @@
-<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
-  <span class="visually-hidden">Loading...</span>
+<h5>Colors</h5>
+<div class="">
+  <label for="filterText" class="form-label"></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="Search on Colors..">
+</div>
+<div *ngIf="filterText.length>2" class="alert alert-success">
+  {{filterText}} searched.
 </div>
 <ul class="list-group">
-  <li routerLink="/cars" [class]="getAllColorClass()" >All Colors</li>
-  <li (click)="setCurrentColor(color)" routerLink="/cars/color/{{ color.id }}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">{{ color.name }}</li>
+  <li [class]="getAllColorClass()" 
+  routerLink="/cars">All Colors</li>
+  <li (click)="setCurrentColor(color)" 
+  routerLink="/cars/color/{{color.id}}"
+  *ngFor="let color of colors | filterColor:filterText" 
+  [class]="getCurrentColorClass(color)"> {{color.name}} </li>
 </ul>
-<h5 *ngIf="currentColor">{{ currentColor.name }} seçtiniz</h5>
