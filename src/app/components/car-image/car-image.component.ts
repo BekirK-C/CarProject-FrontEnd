@@ -13,7 +13,7 @@ export class CarImageComponent implements OnInit {
 
   carImages:CarImage[]=[];
   currentImage:CarImage; 
-  path = "https://localhost:44368/Images/";
+  path = "https://localhost:44368/Uploads/Images/";
   constructor(private carImageService:CarImageService) { }
 
   ngOnInit(): void {
