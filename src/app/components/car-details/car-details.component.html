@@ -1,4 +1,4 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 <div class="">
@@ -9,40 +9,6 @@ placeholder="Search on Cars..">
 <div *ngIf="filterText.length>2" class="alert alert-warning">
   {{filterText}} searched.
 </div>
-<!--
-<table *ngIf="dataLoaded==true" class="table">
-  <thead>
-     <tr>
-
-  
-      
-        
-  
-
-      
-  
-  @@ -11,15 +19,40 @@
-
-      <th>Car Id</th>
-      <th>Brand Name</th>
-      <th>Color Name</th>
-      <th>Model Year</th>
-      <th>Daily Price</th>
-      <th>Description</th>
-      <th></th>
-     </tr>
-  </thead>
-  <tr *ngFor="let car of cars |filterCar:filterText">
-      <td>{{car.carId}}</td>
-      <td>{{car.brandName}}</td>
-      <td>{{car.colorName}}</td>
-      <td>{{car.modelYear}}</td>
-      <td>{{car.dailyPrice}}</td>
-      <td>{{car.description}}</td>
-      <td> <button (click)="addToGarage(car)" type="button" class="btn btn-warning">Add to Garage
-      </button></td>
-  </tr>
-</table>-->
 <div class="row">
   <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
     <img src="{{imageUrl}}{{car.imagePath}}"  class="card-img-top">
@@ -64,4 +30,44 @@ placeholder="Search on Cars..">
       </section>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<div  class="mx-auto">
+  <br>
+  <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div *ngFor="let carImage of carImages let i = index" [class]="getSliderClassName(i)">
+        <img src="{{imageUrl}}{{carImage.imagePath}}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="carouselExampleIndicators"   data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    </div>  
+</div> 
+
+<table class="table table-warning table-striped">
+    <body>
+    <ul  class="list-group">
+      <li (click)="setCurrentCar(car)" routerLink="/cars/cardetail/{{car.id}}"  
+      [class]="getCurrentCarClass(car)">
+             <tr><strong>Brand: </strong> {{car.brandName}}</tr>
+             <tr><strong>Model Year: </strong> {{car.modelYear}}</tr>
+             <tr><strong>Color: </strong> {{car.colorName}}</tr>
+             <tr><strong>Daily Price: </strong> {{car.dailyPrice}}</tr>
+             <tr><strong>Description: </strong> {{car.description}}</tr>
+    </li>
+    </ul>
+  </body>
+</table>  

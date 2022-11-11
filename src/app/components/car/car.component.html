@@ -1,7 +1,74 @@
-<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 <ul class="list-group">
   <li (click)="setCurrentCar(car)" routerLink="/cars/car-details/{{ car.id }}" *ngFor="let car of cars" [class]="getCurrentCarClass(car)">{{car.carName}}</li>
-</ul>
+</ul> -->
 
+<div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="">
+<label for="filterText" class="form-label"></label>
+<input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+placeholder="Search on Cars..">
+</div>
+<div *ngIf="filterText.length>2" class="alert alert-warning">
+  {{filterText}} searched.
+</div>
+
+<div class="row">
+<div class="col-md-3">
+  <select [(ngModel)]="currentBrand" class="form-select" aria-label="Default select example">
+      <!--<option [selected]="IsCurrentBrandNull()"  [value]="undefined">Bir marka seçiniz</option>-->
+      <option *ngFor="let brand of brands" [value]="brand.id" [selected]="getCurrentBrand(brand.id)">
+        {{brand.name}}</option>
+  </select>
+</div>
+<div class="col-md-3">
+<select [(ngModel)]="currentColor" class="form-select" aria-label="Default select example">
+    <!--<option [selected]="IsCurrentColorNull()"  [value]="undefined">Bir renk seçiniz</option>-->
+    <option *ngFor="let color of colors" [value]="color.id" [selected]="getCurrentColor(color.id)">
+      {{color.name}}</option>
+</select>
+</div>
+<div class="col-md-2">
+<button routerLink="/cars/filter/brand/{{currentBrand}}/color/{{currentColor}}" type="button" class="btn btn-success btn-lg">
+    Filter
+</button>
+</div> 
+<div class="col-md-2" >
+  <button
+    class="btn btn-danger btn-lg"
+    routerLink="/cars"
+  >
+    Clear
+  </button>
+</div>
+
+</div>
+
+
+
+<div class="row">
+  <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
+    <img src="{{imageUrl}}{{car.imagePath}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{car.description}}</h5>
+    </div>
+   <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Brand: {{car.brandName}} </li>
+        <li class="list-group-item"> Model: {{car.modelYear}}</li>
+        <li class="list-group-item"> Daily Price: {{car.dailyPrice}}</li>
+        <li class="list-group-item"> Color: {{car.colorName}}</li>
+   </ul>
+    <div class="card-body">
+      <section style="float:left">
+        <button type="button" class="btn btn-secondary"routerLink="/cars/cardetail/{{car?.id}}">Details</button>
+      </section>
+      <section style="float:right">
+        <button routerLink="/cars/rental/{{car.id}}" type="button" class="btn btn-success">Rent</button>
+      </section>
+    </div>
+  </div>
+</div>
