@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,10 @@ import { FilterBrandPipe } from './pipes/filter-brand.pipe';
 import { GarageComponent } from './components/garage/garage.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CarFilterComponent } from './components/car-filter/car-filter.component'
+import { CarFilterComponent } from './components/car-filter/car-filter.component';
+import { LoginComponent } from './components/login/login.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
     FilterBrandPipe,
     GarageComponent,
     CarFilterComponent,
+    LoginComponent,
+    CarAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,9 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
       positionClass: 'toast-bottom-right',
     }),
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -101,9 +101,9 @@ import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
-  selector: 'app-car-detail',
+  selector: 'app-car-details',
   templateUrl: './car-details.component.html',
-  styleUrls: ['./car-detail.component.css'],
+  styleUrls: ['./car-details.component.css'],
 })
 export class CarDetailsComponent implements OnInit {
 
