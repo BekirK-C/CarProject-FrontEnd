@@ -1,27 +1,36 @@
-# CarProject
+#RentACar-Frontend
+=================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This project is the frontend of my rent a car project that I developed at the C#-Angular camp of Engin Demiroğ. I used [Angular](https://www.angular.io/) for frontend in this project.
 
-## Development server
+##Technics That Used
+------------------------------------------------------------------------------------------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+-   Custom Directives
+-   Custom Form Controls
+-   Guards
+-   Interceptors
+-   Pipes
 
-## Code scaffolding
+##Associated Project
+------------------------------------------------------------------------------------------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The backend of this project :
 
-## Build
+[RentACar-Backend](https://github.com/BekirK-C/RentACar-Backend)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+##Views of Projects
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/80921292/201706764-7be27f67-019f-47c0-ab4e-8bbbf2f8a2e5.gif)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+##Contributions
+--------------------------------------------------------------------------------
 
-## Further help
+Thanks to [Engin Demiroğ](https://www.github.com/engindemirog) for his contributions.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##Feedbacks
+------------------------------------------------------------------------
+
+If you have any feedback, you can send an e-mail to <b.b.kamac@gmail.com> with the subject title RentACar-Frontend.
