@@ -1,7 +1,7 @@
 RentACar-Frontend
 =================
 
-This project is the frontend of my rent a car project that I developed at the C#-Angular camp of Engin Demiroğ. I used [Angular](https://www.angular.io/) for frontend in this project.
+This project is the frontend of my rent a car project that I developed at the C#-Angular camp of Engin Demiroğ. I used [Angular](https://www.angular.io/) for frontend in this project. As someone who wants to be a backend developer there is a lot missing in the frontend edge. These deficiencies will be completed as I develop myself in angular.
 
 Built With
 ----------
